@@ -1,4 +1,5 @@
 # -*- coding:utf-8 -*-
+import datetime
 import time
 
 import requests
@@ -67,10 +68,16 @@ while 1:
 
         }
         r = requests.post(url, data=d, headers=headers)
+
+        print(datetime.datetime.now())
         print(content)
         print(visitorName)
         print(visitorPhone)
         print(r.text)
-        time.sleep(random.randint(5, 60))  # 休眠5-60秒
+        if datetime.datetime.now().hour < 8:
+            time.sleep(random.randint(30, 60)*60)  # 休眠30-60分钟
+        else:
+            time.sleep(random.randint(5, 15))  # 休眠5-60秒
+
     except:
         print("error")
