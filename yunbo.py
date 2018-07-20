@@ -7,9 +7,9 @@ import random
 
 # 随机生成手机号码
 def createPhone():
-    prelist = ["130", "131", "132", "133", "134", "135", "136", "137", "138", "139", "147", "150", "151", "152", "153",
+    prelist = ['17718378097', "130", "131", "132", "133", "134", "135", "136", "137", "138", "139", "147", "150", "151", "152", "153",
                "155", "156", "157", "158", "159", "186", "187", "188"]
-    return random.choice(prelist) + "".join(random.choice("0123456789") for i in range(8))
+    return (random.choice(prelist) + "".join(random.choice("0123456789") for i in range(8)))[0:11]
 
 
 # 随机生成姓名
@@ -71,6 +71,6 @@ while 1:
         print(visitorName)
         print(visitorPhone)
         print(r.text)
-        time.sleep(5)  # 休眠 秒
+        time.sleep(random.randint(5, 60))  # 休眠5-60秒
     except:
         print("error")
