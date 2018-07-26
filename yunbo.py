@@ -2,7 +2,7 @@
 import datetime
 import time
 
-import requests
+from proxy import prequests
 import random
 
 
@@ -67,7 +67,7 @@ while 1:
             'origin': '华鼎云博',
 
         }
-        r = requests.post(url, data=d, headers=headers)
+        r = prequests.post(url, data=d, headers=headers)
 
         print(datetime.datetime.now())
         print(content)
